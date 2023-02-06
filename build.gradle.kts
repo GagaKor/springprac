@@ -20,6 +20,9 @@ repositories {
 extra["snippetsDir"] = file("build/generated-snippets")
 
 dependencies {
+	// https://mvnrepository.com/artifact/io.github.serpro69/kotlin-faker
+	implementation("io.github.serpro69:kotlin-faker:1.13.0")
+
 //	implementation("org.springframework.boot:spring-boot-starter-actuator")
 //	implementation("org.springframework.boot:spring-boot-starter-cache")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
