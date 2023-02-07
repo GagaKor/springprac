@@ -1,7 +1,6 @@
 package com.ex.springprac.service
 
-import com.ex.springprac.domain.member.Member
-import com.ex.springprac.domain.member.MemberRepository
+import com.ex.springprac.domain.member.*
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -11,7 +10,11 @@ class MemberService(
 ) {
 
     @Transactional(readOnly = true)
-    fun findAll(): MutableList<Member> = memberRepository.findAll()
+    fun findAll(): List<MemberRes> =
+        memberRepository.findAll().map{
+            it.toDto()
+        }
+
 
 
 }
